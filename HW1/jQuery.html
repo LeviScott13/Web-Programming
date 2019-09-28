@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery-1.11.2.js"></script>
+
+    <style type="text/css">
+        .newStyle1 {
+            font-family: "Times New Roman";
+            font-size: large;
+            font-style: normal;
+        }
+
+        .auto-style1 {
+            text-align: left;
+            width: 277px;
+        }
+
+        .auto-style2 {
+            width: 140px;
+        }
+
+        .myStyle {
+            text-align: right;
+        }
+
+        .auto-style3 {
+            font-size: large;
+        }
+
+        .auto-style4 {
+            text-align: right;
+            width: 184px;
+        }
+
+        .auto-style5 {
+            height: 23px;
+            width: 195px;
+        }
+
+        .auto-style6 {
+            text-align: center;
+            width: 194px;
+        }
+
+        .auto-style7 {
+            width: 184px;
+        }
+
+        form {
+            text-align: right;
+            width: 192px;
+        }
+
+        #Text1 {
+            height: 208px;
+            width: 401px;
+            margin-left: 0px;
+        }
+
+        .purchaseButton {
+            text-align: center;
+            width: 370px;
+        }
+
+        #Customer {
+            margin-bottom: 0px;
+        }
+
+        #Order {
+            margin-bottom: 0px;
+        }
+    </style>
+
+    <script>
+
+        var subtotal = 0;
+        var book = "";
+        var priceArray = [];
+        var bookArray = [];
+
+        $("#books option:selected").each(function () {
+            bookArray.push($(this).text());
+            priceArray.push($(this).val());
+            subtotal += parseFloat($(this).val());
+
+            for (var i = 0; i < priceArray.length; i++) {
+                book += bookArray[i] + "\n";
+            }
+            $("#BookText").text(book);
+            $("#PriceText").text(subtotal);
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <p>
+        <a href="../default.html">Home</a> &gt; <a href="default.html">HW 1</a> &gt; JavaScript Example
+
+    </p>
+    <h1>Book Order Form</h1>
+
+    <table>
+        <tr>
+            <td class="auto-style2">
+
+                <strong>
+                    <span class="auto-style3">Select Books</span><br class="auto-style3" />
+                    <span class="auto-style3">and/or Supply</span><br class="auto-style3" />
+                    <span class="auto-style3">
+                        Book title and
+                    </span>
+                    <br class="auto-style3" />
+                    <span class="auto-style3">price</span>
+                </strong>
+            </td>
+
+            <td class="auto-style1">
+                <select id="Books" multiple="multiple">
+                    <option value="20.00" id="Walden Pond">Walden Pond</option>
+                    <option value="15.00" id="Zen & the Art...">Zen & the Art...</option>
+                    <option value="8.00" id="The Razor's Edge">The Razor's Edge</option>
+                    <option value="15.00" id="Poisonwood Bible">The Poisonwood Bible</option>
+                    <option value="10.00" id="Wuthering Heights">Wuthering Heights</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+
+    <p class="myStyle" style="width: 602px">
+        <strong>Book </strong><input id="BookText" type="text" value="" />
+        &nbsp;<strong><span> Price</span></strong>&nbsp; <input id="PriceText" type="text" value="0.00" />
+    </p>
+
+    <table>
+        <tr>
+
+            <td style="font-size: large; font-weight: 700" class="auto-style5">Options</td>
+            <td class="auto-style4">
+                <form id="Order">
+                    <input id="Rush Order" type="checkbox" value="10.00" /> Rush Order
+                    <input id="Gift Wrap" type="checkbox" value="5.00" /> Gift Wrap
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: large; font-weight: 700" class="auto-style5">Customer Type</td>
+            <td class="auto-style7">
+                <form id="Customer" action="radio">
+                    <input type="radio" name="type" value="General Customer" checked="checked" />General <input type="radio" name="type" value="Government Customer" />Government
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-size: large; font-weight: 700" class="auto-style5">Ship to</td>
+            <td class="auto-style7">
+                <select id="Ship State">
+                    <option value="5.00" id="Ship to NY">NY</option>
+                    <option value="7.00" id="Ship to CA">CA</option>
+                    <option value="3.00" id="Ship to SC">SC</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <p class="myStyle" style="width: 320px"><strong>Purchase Details:</strong></p>
+    <table style="width: 35%; height: 225px;">
+        <tr>
+
+            <td class="auto-style6">
+                <input id="Button1" type="button" value="Purchase"/>
+            </td>
+            <td>
+                <textarea id="Text1"></textarea>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

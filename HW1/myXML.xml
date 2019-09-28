@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet href="movies.xsl" type="text/xsl"?>
+<collection>
+
+  <movie>
+    <title>Sandlot</title>
+    <year>1990</year>
+    <genre>Sport</genre>
+  </movie>
+
+  <movie>
+    <title>Interstellar</title>
+    <year>2016</year>
+    <genre>Science Fiction</genre>
+  </movie>
+
+  <movie>
+    <title>Christmas Vaction</title>
+    <year>1982</year>
+    <genre>Comedy</genre>
+  </movie>
+
+
+</collection>
